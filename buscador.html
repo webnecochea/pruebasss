@@ -1,0 +1,39 @@
+    <!-- Portfolio Section -->
+    <div class="container" style="background-color: white">
+
+    
+        <br><br>
+        <h1 class="text-center">Comedores relevados</h1>
+        <br><br>
+        <div class="form-inline" action="#table" style="margin-left:auto;margin-right:auto;width:100%">
+          <h4 style="margin-left:auto;margin-right:auto;width:100%;text-align:center"> <input class="form-control" action="#table" id="myInput" type="text" placeholder="Buscar por nombre o calle" style="margin-left:auto;margin-right:auto;width:90%"> <a href="#table" class="btn-lg btn-primary" type="submit" style="text-align:center;margin-left:auto;margin-right:auto;">Buscar</a></h4>
+          <br>
+          </div>
+    
+        <br>
+        <div  id="myTable">
+        <div class="row" ng-controller="controlador as lista">
+          <div class="col-lg-4 col-sm-6 portfolio-item" ng-repeat="cuenta in lista.comedores|orderBy:'Id'">
+            <div class="card h-100" style="background-color: white;">
+              <a href="verInfo.html" ng-click="examinar(lista.comedores[$index])"><img class="card-img-top"  src="{{cuenta.url_img}}" alt=""></a>
+              <div class="card-body text-center">
+                <h6 class="card-title text-center mb-2" style="font-weight:bold;">
+                  <a href="#">{{cuenta.Nombre}} </a>
+                </h6> 
+                  <span class="{{cuenta.Estado}} text-center font-wight-bold" style="font-size:medium;margin-top: 5px;">({{cuenta.Estado}})</span>
+                
+                <p class=" font-weight-bold text-center">Calle {{cuenta.Calle}} N° {{cuenta.Altura}}</p>
+    
+                <div class="row text-center mx-auto d-block">
+                  <a class="btn btn-primary" style="margin-left: 10px;" href=""><span class="fa fa-phone"></span></a>
+                  <a class="btn btn-primary" style="margin-left: 10px;" href=""><span class="fa fa-whatsapp"></span></a>
+                </div>
+                <p class="card-text text-left mt-4"><small class="text-muted">Ultima actualización {{cuenta.Actualizado}}</small></p>
+    
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      </div>

@@ -1,0 +1,150 @@
+<html lang="en" ng-app ="datos">
+
+<head>
+  <script src="./angular.js"></script>
+  <script src="./angular.min.js" integrity="undefined" crossorigin="anonymous"></script>
+  <script src="./datos2.js"></script> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script><!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Base de datos - Comedores Comunitarios</title>
+  <div ng-include="'style.css'"></div>
+</head>
+
+<body >
+
+  <div ng-include="'nav.html'"></div>
+
+  <br>
+  <!-- Page Content -->
+  <div class="container" style="background-color: white">
+
+
+    <!-- Marketing Icons Section -->
+
+    <div class="row">
+      
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h5 class="card-header"> <span class="fa fa-info-circle"></span> Información Detallada</h5>
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100" >
+          <h5 class="card-header"><span class="fa fa-refresh"></span> Datos actualizados </h5>
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h5 class="card-header"><span class="fa fa-paper-plane"></span> Comunicación efectiva </h5>
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. ntur, sed eveniet, magni nostrum sint fuga.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Call to Action Section -->
+    <div class="card mx-auto" style="width:82%">
+      <h5 class="card-header"><span class="fa fa-gratipay"></span> Recepción de donaciones</h5>
+    <div class="container">
+      <div class="row mb-4 mt-4">
+      <div class="col-md-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-block" href="#">Donar Alimentos</a>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+    <!-- /.buscador -->
+    <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myTable div").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+      </script>     
+      <div class="container" style="background-color: white">
+            <br><br>
+            <h1 class="text-center">Comedores relevados</h1>
+            <br><br>
+            <div class="form-inline" action="#table" style="margin-left:auto;margin-right:auto;width:100%">
+              <h4 style="margin-left:auto;margin-right:auto;width:100%;text-align:center"> <input class="form-control" action="#table" id="myInput" type="text" placeholder="Buscar por nombre o calle" style="margin-left:auto;margin-right:auto;width:90%"> <a href="#table" class="btn-lg btn-primary" type="submit" style="text-align:center;margin-left:auto;margin-right:auto;">Buscar</a></h4>
+              <br>
+              </div>
+
+            <br>
+            <div  id="myTable">
+            <div class="row" ng-controller="controlador as lista">
+              <div class="col-lg-4 col-sm-6 portfolio-item" ng-repeat="cuenta in lista.comedores|orderBy:'Id'">
+                <div class="card h-100" style="background-color: white;">
+                  <a href="verInfo.html" ng-click="examinar(lista.comedores[$index])"><img class="card-img-top"  src="{{cuenta.url_img}}" alt=""></a>
+                  <div class="card-body text-center">
+                    <h6 class="card-title text-center mb-2" style="font-weight:bold;">
+                      <a href="#">{{cuenta.Nombre}} </a>
+                    </h6> 
+                      <span class="{{cuenta.Estado}} text-center font-wight-bold" style="font-size:medium;margin-top: 5px;">({{cuenta.Estado}})</span>
+                    
+                    <p class=" font-weight-bold text-center">Calle {{cuenta.Calle}} N° {{cuenta.Altura}}</p>
+
+                    <div class="row text-center mx-auto d-block">
+                      <a class="btn btn-primary" style="margin-left: 10px;" href=""><span class="fa fa-phone"></span></a>
+                      <a class="btn btn-primary" style="margin-left: 10px;" href=""><span class="fa fa-whatsapp"></span></a>
+                    </div>
+                    <p class="card-text text-left mt-4"><small class="text-muted">Ultima actualización {{cuenta.Actualizado}}</small></p>
+
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            </div>
+        </div>
+
+    <!-- Features Section -->
+    <hr>
+    <div class="container">
+        <h2 class="mt-4 text-center">Información Georreferenciada</h2>
+        <img class="img-fluid rounded mt-4" src="http://placehold.it/700x450" alt="">
+      </div>
+    <!-- /.row -->
+
+    <hr>
+
+
+
+
+  </div>
+
+  <!-- /.footer -->
+  <div ng-include="'footer.html'"></div>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+
+</html>

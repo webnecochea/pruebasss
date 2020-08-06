@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+<style>
+.blanco{
+  color: #2e6f6b;
+  background-color:#ffffff;
+  vertical-align: auto;
+  font-weight: bold;
+}
+.ACTIVO{
+  COLOR:#78C2AD;
+}
+.INACTIVO{
+  COLOR:crimson;
+}
+.FALTA{
+  COLOR:#ffc107;
+}
+.card{
+  color:#5a5a5a;
+  -webkit-box-shadow: 2px 4px 20px -5px rgba(0,0,0,0.75);
+}
+.card-body{
+  text-align: justify;
+}
+
+a{
+  color:#009688;
+}
+
+.card-img-top {
+width: 100%;
+min-height: 200px;
+height: 15vw;
+object-fit: cover;
+}
+
+.SI{
+  COLOR:#78C2AD;
+  text-align: justify;
+}
+.NO{
+  COLOR:crimson;
+  text-align: justify;
+}
+</style>

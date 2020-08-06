@@ -1,0 +1,500 @@
+<html lang="en" ng-app ="datos">
+
+<head>
+
+  
+  <script src="./angular.js"></script>
+  <script src="./angular.min.js" integrity="undefined" crossorigin="anonymous"></script>
+  <script src="./datos2.js"></script>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Base de datos - Comedores Comunitarios</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+  <!-- Custom styles for this template -->
+  <link href="css/modern-business.css" rel="stylesheet">
+
+  <style>
+    .blanco{
+      color: #2e6f6b;
+      background-color:#ffffff;
+      vertical-align: auto;
+      font-weight: bold;
+    }
+    .ACTIVO{
+      COLOR:#78C2AD;
+    }
+    .INACTIVO{
+      COLOR:crimson;
+    }
+    .FALTA{
+      COLOR:#ffc107;
+    }
+    .card{
+      color:#5a5a5a;
+      -webkit-box-shadow: 2px 4px 20px -5px rgba(0,0,0,0.75);
+    }
+    .card-body{
+      text-align: justify;
+    }
+
+    a{
+      color:#009688;
+    }
+
+    .card-img-top {
+    width: 100%;
+    min-height: 200px;
+    height: 15vw;
+    object-fit: cover;
+}
+
+  </style>
+
+</head>
+
+<body >
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top" style="-webkit-box-shadow: 1px 2px 10px -5px rgba(0,0,0,0.75);">
+    <div class="container">
+     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Objetivos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Comedores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">Buscador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="services.html">Filtros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Mapas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contacto <span class="fa fa-phone fa-fw"></span></a>
+          </li>
+         
+        </ul>
+        
+      </div>
+    </div>      
+  </nav>
+
+
+  <div class="container">
+    <div class="row text-center mx-auto">
+      <div class="col col-lg-2 col-sm-12">
+        <a href="http://quequen.unicen.edu.ar">
+        <img src="./logo.png" class="mx-auto" style="width:80px;padding:8px;background-color: white;" alt=""></a>
+      </div>  
+        <h3 class="lg-h2 mt-4 text-center text-capitalize" style="font-size:(130%+25px);font-weight: bold;">base de datos de comedores comunitarios</h3>
+      
+
+
+    </div>
+  </div>
+
+
+
+  <header>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <!-- Slide One - Set the background image for this slide in the line below -->
+        <div class="carousel-item active" style="background-image: url('https://www.libertadfm917.com/wp-content/uploads/2017/08/comedor.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <!-- Slide Two - Set the background image for this slide in the line below -->
+        <div class="carousel-item" style="background-image: url('https://www.diario4v.com/u/fotografias/fotosnoticias/2016/12/22/16717.jpg')">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </header>
+
+  <br>
+  <!-- Page Content -->
+  <div class="container" style="background-color: white">
+
+
+    <!-- Marketing Icons Section -->
+
+    <div class="row">
+      
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header"> <span class="fa fa-info-circle"></span> Información Detallada</h4>
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100" >
+          <h4 class="card-header"><span class="fa fa-refresh"></span> Datos actualizados </h4>
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header"><span class="fa fa-paper-plane"></span> Comunicación efectiva </h4>
+          <div class="card-body">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
+          </div>
+        </div>
+      </div>
+    </div><br>
+  </div>
+    <!-- /.row -->
+
+    <!-- Portfolio Section -->
+    <div class="container" style="background-color: white">
+    <script>
+      $(document).ready(function(){
+        $("#myInput").on("keyup", function() {
+          var value = $(this).val().toLowerCase();
+          $("#myTable div").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+          });
+        });
+      });
+      </script> 
+
+
+
+
+<br><br>
+<h1 class="text-center">Comedores relevados</h1>
+<br><br>
+
+<div class="tabbable" style="border:3px"> <!-- Only required for left/right tabs -->
+				
+  <ul class="nav nav-tabs"><!--INICIO BOTONES-->
+       <li class="active"><a href="#EJ1" data-toggle="tab"> 
+         <button type="button" class="btn btn-light mr-2" href="#EJ1">Comidas</button> 
+       </a></li>
+     
+     
+        <li><a href="#EJ2" data-toggle="tab" class=""> 
+         <button type="button" class="btn btn-light mr-2" href="#EJ2">Servicios Disponibles</button> 
+       </a></li>
+     
+     
+        <li><a href="#EJ3" data-toggle="tab" class="active"> 
+         <button type="button" class="btn btn-light mr-2" href="#EJ3">Dias</button> 
+       </a></li>
+     
+     
+        <li><a href="#EJ4" data-toggle="tab"> 
+         <button type="button" class="btn btn-light mr-2" href="#EJ4">Infraestructura</button> 
+       </a></li>
+ </ul> <!--FIN BOTONES-->
+
+<br>
+
+ <div class="tab-content"> <!--iNICIO EJERCICIOS-->
+             
+    <div class="tab-pane" id="EJ1">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">    
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button">Desayuno</button>
+          </div>
+          <select class="custom-select" id="Desayuno">
+            <option value="">Elegir...</option>
+            <option value="SI">Si</option>
+            <option value="NO">No</option>
+          </select>
+        </div></div>
+  
+        <br class="d-none d-sm-block"> 
+  
+        <div class="col-md-3 col-sm-6">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-secondary" type="button" aria-pressed="true">Almuerzo</button>
+            </div>
+            <select class="custom-select" id="inputGroupSelect03">
+              <option value="SI">Si</option>
+              <option value="NO">No</option>
+            </select>
+          </div></div>
+  
+          <br class="d-none d-sm-block"> 
+  
+          <div class="col-md-3 col-sm-12">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" aria-pressed="true" type="button">Merienda</button>
+              </div>
+              <select class="custom-select" id="inputGroupSelect03">
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div></div>
+  
+            <br class="d-none d-sm-block"> 
+  
+            <div class="col-md-3 col-sm-12">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" aria-pressed="true" type="button">Cena</button>
+                </div>
+                <select class="custom-select" id="inputGroupSelect03">
+                  <option value="SI">Si</option>
+                  <option value="NO">No</option>
+                </select>
+              </div></div>
+  
+  
+      </div>
+     </div>
+
+     <div class="tab-pane" id="EJ2">
+    
+      <div class="row">
+        <div class="col-md-3 col-sm-6">    
+          <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button">Gas</button>
+          </div>
+          <select class="custom-select" id="Desayuno">
+            <option value="SI">Todos</option>
+            <option value="SI">Si</option>
+            <option value="NO">No</option>
+          </select>
+        </div></div>
+  
+        <br class="d-none d-sm-block"> 
+  
+        <div class="col-md-3 col-sm-6">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <button class="btn btn-outline-secondary" type="button" aria-pressed="true">Electricidad</button>
+            </div>
+            <select class="custom-select" id="inputGroupSelect03">
+              <option value="SI">Si</option>
+              <option value="NO">No</option>
+            </select>
+          </div></div>
+  
+          <br class="d-none d-sm-block"> 
+  
+          <div class="col-md-3 col-sm-12">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" aria-pressed="true" type="button">Internet</button>
+              </div>
+              <select class="custom-select" id="inputGroupSelect03">
+                <option value="SI">Si</option>
+                <option value="NO">No</option>
+              </select>
+            </div></div>
+  
+            <br class="d-none d-sm-block"> 
+  
+            <div class="col-md-3 col-sm-12">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary" aria-pressed="true" type="button">Cloacas</button>
+                </div>
+                <select class="custom-select" id="inputGroupSelect03">
+                  <option value="SI">Si</option>
+                  <option value="NO">No</option>
+                </select>
+              </div></div>
+              <br class="d-none d-sm-block"> 
+    
+              <div class="col-md-3 col-sm-12">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <button class="btn btn-outline-secondary" aria-pressed="true" type="button">Agua</button>
+                  </div>
+                  <select class="custom-select" id="inputGroupSelect03">
+                    <option value="SI">Si</option>
+                    <option value="NO">No</option>
+                  </select>
+                </div></div>
+  
+  
+      </div>
+
+     </div>
+
+    <div class="tab-pane active" id="EJ3">
+ 
+     </div> 
+
+    <div class="tab-pane" id="EJ4">
+
+     </div>
+
+   
+</div> <!--FIN EJERCICIOS-->
+  
+</div>
+
+
+   
+
+
+    <br>
+    <div  id="myTable">
+      <table class="table table-hover table-striped" ng-controller="controlador as lista" style="-webkit-box-shadow: 2px 4px 20px -5px rgba(0,0,0,0.75);">
+        <thead>
+          <tr>
+            <th scope="col">Comedor</th>
+            <th scope="col">Encargado</th>
+            <th scope="col">Desayuno</th>
+            <th scope="col">Almuerzo</th>
+            <th scope="col">Merienda</th>
+            <th scope="col">Cena</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Días</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="cuenta in lista.comedores|orderBy:'Nombre'|filter:''">
+            <th scope="row">{{cuenta.Nombre}}</th>
+            <td>{{cuenta.Encargado}}</td>
+            <td>{{cuenta.DESAYUNO}}</td>
+            <td>{{cuenta.ALMUERZO}}</td>
+            <td>{{cuenta.MERIENDA}}</td>
+            <td>{{cuenta.CENA}}</td>
+            <td>2262-15000000</td>
+            <td>{{cuenta.cant_dias}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    <br> <br>
+
+    <div class="row" ng-controller="controlador as lista">
+      <div class="col-lg-4 col-sm-6 portfolio-item" ng-repeat="cuenta in lista.comedores|orderBy:'Nombre'">
+        <div class="card h-100" style="background-color: white;">
+          <a href="#"><img class="card-img-top"  src="{{cuenta.url_img}}" alt=""></a>
+          <div class="card-body text-center">
+            <h6 class="card-title text-center mb-2" style="font-weight:bold;">
+              <a href="#">{{cuenta.Nombre}} </a>
+            </h6> 
+              <span class="{{cuenta.Estado}} text-center font-wight-bold" style="font-size:medium;margin-top: 5px;">({{cuenta.Estado}})</span>
+            
+            <p class=" font-weight-bold text-center">Calle {{cuenta.Calle}} N° {{cuenta.Altura}}</p>
+
+            <div class="row text-center mx-auto d-block">
+              <a class="btn btn-primary" style="margin-left: 10px;" href=""><span class="fa fa-phone"></span></a>
+              <a class="btn btn-primary" style="margin-left: 10px;" href=""><span class="fa fa-whatsapp"></span></a>
+            </div>
+            <p class="card-text text-left mt-4"><small class="text-muted">Ultima actualización {{cuenta.Actualizado}}</small></p>
+
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+    <!-- /.row -->
+
+    <!-- Features Section -->
+    <hr>
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="mt-4">Modern Business Features</h2>
+        <p>The Modern Business template by Start Bootstrap includes:</p>
+        <ul>
+          <li>
+            <strong>Bootstrap v4</strong>
+          </li>
+          <li>jQuery</li>
+          <li>Font Awesome</li>
+          <li>Working contact form with validation</li>
+          <li>Unstyled page elements for easy customization</li>
+        </ul>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
+      </div>
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mt-4" src="http://placehold.it/700x450" alt="">
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+    <!-- Call to Action Section -->
+    <div class="row mb-4 mt-4">
+      <div class="col-md-8">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
+      </div>
+      <div class="col-md-4">
+        <a class="btn btn-lg btn-secondary btn-block" href="#">Donar Alimentos</a>
+      </div>
+    </div>
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; UNICEN Quequén 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+
+</html>
